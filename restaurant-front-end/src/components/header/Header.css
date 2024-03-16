@@ -17,6 +17,11 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9;
+}
+.logo #h2
+{
+    margin-bottom: 0px;
 }
 .navigation
 {
