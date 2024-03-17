@@ -1,8 +1,8 @@
 import sliderImg01 from "../images/slider1.png";
 import sliderImg02 from "../images/slider2.png";
-import sliderImg03 from "../images/slider03";
+import sliderImg03 from "../images/slider03.png";
 
-export default sliderData = [
+const sliderData = [
   {
     id: "01",
     title: "We have simple and delicious food for you",
@@ -22,3 +22,5 @@ export default sliderData = [
     imgUrl: sliderImg03,
   },
 ];
+
+export default sliderData;
