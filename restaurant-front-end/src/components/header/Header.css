@@ -18,6 +18,7 @@
     top: 0;
     left: 0;
     z-index: 9;
+    background: #141124;
 }
 .logo #h2
 {
@@ -59,7 +60,7 @@
     padding: 10px 25px;
     height: 35px;
     border-radius: 50px;
-    background: #141124;
+    background: #0a071a;
 }
 .custom_search input
 {
