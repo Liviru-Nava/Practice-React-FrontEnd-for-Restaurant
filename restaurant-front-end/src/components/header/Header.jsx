@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import "./Header.css"
 import { Container } from "reactstrap";
 const navLinks = [
@@ -24,6 +24,9 @@ const navLinks = [
     }
 ]
 const Header = () => {
+
+    const menuRef = useRef();
+    const menuToggle = () => menuRef.current.classList.toggle('active_menu')
     return (
         <header className="header">
             <Container>
@@ -33,25 +36,33 @@ const Header = () => {
                             <span><i class="ri-restaurant-2-line"></i></span>Chef Food
                          </h2>
                     </div>
-                    <div className="nav_menu">
-                        <ul className="nav_list">
+                    <div className="nav_menu" ref={menuRef}>
+                        <div className="nav_list_wrapper d-flex align-items-center justify-content-center">
+                            <ul className="nav_list">
                             {
-                                navLinks.map((item, index)=>(<li className="nav_item" key={index}>
+                                navLinks.map((item, index)=>(<li className="nav_item" key={index} onClick={menuToggle}>
                                 <a href={item.url}>{item.display}</a>
-                            </li>) )
+                                </li>) )
                             }
-                        </ul>
-                    </div>
-
-                    <div className="menu_right">
-                        <div className="custom_search">
-                            <input type="text" name="search" id="search" placeholder="search items..."/>
-                            <span><i class="ri-search-line"></i></span>
+                            </ul>
+                            <div className="menu_right">
+                                <div className="custom_search">
+                                    <input type="text" name="search" id="search" placeholder="search items..."/>
+                                    <span><i class="ri-search-line"></i></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
+                    <div>
+                        <span className="cart_icon">
+                        <i class="ri-shopping-cart-fill"></i>
+                        <span className="badge">
+                            2
+                        </span>
+                        </span>
+                    </div>
                     <div className="mobile_menu">
-                        <span><i class="ri-menu-line"></i></span>
+                        <span><i class="ri-menu-line" onClick={menuToggle}></i></span>
                     </div>
                 </div>
             </Container>
